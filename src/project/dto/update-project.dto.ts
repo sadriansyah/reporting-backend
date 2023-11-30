@@ -3,22 +3,21 @@ import { Type } from 'class-transformer';
 
 export class UpdateProjectDto {
   @IsNotEmpty()
-  project_name:string;
+  project_name: string;
 
   @IsNotEmpty()
-  project_company:string;
+  project_company: string;
 
   @IsNotEmpty()
-  project_prefix:string;
+  project_prefix: string;
 
   @IsNotEmpty()
-  project_pic:string;
+  project_pic: string;
 
   @IsNotEmpty()
   @IsEmail()
-  project_email:string;
+  project_email: string;
 
   @IsNotEmpty()
-  project_contact:string;
-
+  project_contact: string;
 }

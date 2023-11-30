@@ -1,25 +1,24 @@
-import { IsInt, IsNotEmpty, IsOptional, IsEmail } from 'class-validator';
-import { Type } from 'class-transformer';
+import { IsNotEmpty } from 'class-validator';
 
 export class CreateTaskDto {
   @IsNotEmpty()
-  user_name:string;
+  user_name: string;
 
   @IsNotEmpty()
-  task_date:string;
+  task_date: string;
 
   @IsNotEmpty()
-  no_handphone:string;
+  no_handphone: string;
 
   @IsNotEmpty()
-  done:string;
+  done: string;
 
   @IsNotEmpty()
-  doing:string;
+  doing: string;
 
   @IsNotEmpty()
-  to_do:string;
+  to_do: string;
 
   @IsNotEmpty()
-  blocker:string;
+  blocker: string;
 }

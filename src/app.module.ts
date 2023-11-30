@@ -15,11 +15,20 @@ import { UsersModule } from './users/users.module';
 import { DepartmentModule } from './department/department.module';
 import { AuthModule } from './auth/auth.module';
 @Module({
-  imports: [ConfigModule.forRoot(),MomModule,MongooseModule.forRoot(process.env.MONGODB_URI), ProjectModule,
-      MulterModule.register({
-        dest:'./uploads',
-      }),
-      MailModule, UsersModule, DepartmentModule, AuthModule , TaskModule],
+  imports: [
+    ConfigModule.forRoot(),
+    MomModule,
+    MongooseModule.forRoot(process.env.MONGODB_URI),
+    ProjectModule,
+    MulterModule.register({
+      dest: './uploads',
+    }),
+    MailModule,
+    UsersModule,
+    DepartmentModule,
+    AuthModule,
+    TaskModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

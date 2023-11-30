@@ -1,9 +1,9 @@
-import { IsNotEmpty, IsOptional } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 
 export class UpdateDepartmentDto {
   @IsNotEmpty()
-  department_name:string;
+  department_name: string;
 
   @IsNotEmpty()
-  department_abbreviation:string;
+  department_abbreviation: string;
 }

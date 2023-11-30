@@ -9,9 +9,13 @@ import { UsersModule } from 'src/users/users.module';
 import { JwtStrategy } from './jwt.strategy';
 
 @Module({
-  imports:[MongooseModule.forFeature([{name:Auth.name,schema:AuthSchema}]), UsersModule, JwtModule.registerAsync(jwtConfig)],
+  imports: [
+    MongooseModule.forFeature([{ name: Auth.name, schema: AuthSchema }]),
+    UsersModule,
+    JwtModule.registerAsync(jwtConfig),
+  ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],
-  exports:[AuthService]
+  exports: [AuthService],
 })
 export class AuthModule {}

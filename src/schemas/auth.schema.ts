@@ -6,13 +6,13 @@ export type AuthDocument = Auth & Document;
 @Schema()
 export class Auth {
   @Prop()
-  isRevoked:boolean;
+  isRevoked: boolean;
 
   @Prop()
-  expiredAt:Date;
+  expiredAt: Date;
 
   @Prop()
-  user_id:string;
+  user_id: string;
 }
 
 export const AuthSchema = SchemaFactory.createForClass(Auth);

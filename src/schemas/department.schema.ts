@@ -5,18 +5,17 @@ export type DepartmentDocument = Department & Document;
 
 @Schema()
 export class Department {
-  @Prop({required:true})
-  department_name:string;
+  @Prop({ required: true })
+  department_name: string;
 
   @Prop()
-  department_abbreviation:string;
+  department_abbreviation: string;
 
-  @Prop({type:Date, default:Date.now})
-  created_at:Date
+  @Prop({ type: Date, default: Date.now })
+  created_at: Date;
 
-  @Prop({type:Date, default:Date.now})
-  updated_at:Date
-
+  @Prop({ type: Date, default: Date.now })
+  updated_at: Date;
 }
 
 export const DepartmentSchema = SchemaFactory.createForClass(Department);

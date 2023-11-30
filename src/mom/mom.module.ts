@@ -7,8 +7,12 @@ import { ProjectModule } from 'src/project/project.module';
 import { MailModule } from 'src/mail/mail.module';
 
 @Module({
-  imports:[MongooseModule.forFeature([{name:Mom.name, schema:MomSchema}]), ProjectModule, MailModule],
+  imports: [
+    MongooseModule.forFeature([{ name: Mom.name, schema: MomSchema }]),
+    ProjectModule,
+    MailModule,
+  ],
   controllers: [MomController],
-  providers: [MomService]
+  providers: [MomService],
 })
 export class MomModule {}

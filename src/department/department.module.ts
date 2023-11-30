@@ -5,9 +5,13 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Department, DepartmentSchema } from '../schemas/department.schema';
 
 @Module({
-  imports:[MongooseModule.forFeature([{name:Department.name, schema:DepartmentSchema}])],
+  imports: [
+    MongooseModule.forFeature([
+      { name: Department.name, schema: DepartmentSchema },
+    ]),
+  ],
   controllers: [DepartmentController],
   providers: [DepartmentService],
-  exports:[DepartmentService]
+  exports: [DepartmentService],
 })
 export class DepartmentModule {}

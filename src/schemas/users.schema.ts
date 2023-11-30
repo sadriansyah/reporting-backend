@@ -5,36 +5,35 @@ export type UsersDocument = Users & Document;
 
 @Schema()
 export class Users {
-  @Prop({required:true})
-  fullname:string;
+  @Prop({ required: true })
+  fullname: string;
 
   @Prop()
-  email:string;
+  email: string;
 
   @Prop()
-  password:string;
+  password: string;
 
   @Prop()
-  salt:string;
+  salt: string;
 
   @Prop()
-  handphone:string;
+  handphone: string;
 
   @Prop()
-  level:string;
+  level: string;
 
   @Prop()
-  signature:string;
+  signature: string;
 
   @Prop()
-  department_id:string;
+  department_id: string;
 
-  @Prop({type:Date, default:Date.now})
-  created_at:Date
+  @Prop({ type: Date, default: Date.now })
+  created_at: Date;
 
-  @Prop({type:Date, default:Date.now})
-  updated_at:Date
-
+  @Prop({ type: Date, default: Date.now })
+  updated_at: Date;
 }
 
 export const UsersSchema = SchemaFactory.createForClass(Users);

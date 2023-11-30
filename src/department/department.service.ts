@@ -8,39 +8,43 @@ import { UpdateDepartmentDto } from './dto/update-department.dto';
 @Injectable()
 export class DepartmentService {
   constructor(
-    @InjectModel(Department.name) private departmentModel:Model<DepartmentDocument>
-  ){}
+    @InjectModel(Department.name)
+    private departmentModel: Model<DepartmentDocument>,
+  ) {}
 
-  async create(createDepartmentDto:CreateDepartmentDto):Promise<Department> {
+  async create(createDepartmentDto: CreateDepartmentDto): Promise<Department> {
     const create = new this.departmentModel(createDepartmentDto);
     return await create.save();
   }
 
-  async findAll():Promise<any> {
+  async findAll(): Promise<any> {
     try {
       const data = await this.departmentModel.find().exec();
       return {
-        status:200,
+        status: 200,
         data,
-      }
+      };
     } catch (error) {
       return {
-        status:500,
-        message:error
-      }
+        status: 500,
+        message: error,
+      };
     }
   }
 
-  async update(id:string, updateDepartmentDto:UpdateDepartmentDto){
-    return await this.departmentModel.findOneAndReplace({_id:id}, updateDepartmentDto,{new:true});
+  async update(id: string, updateDepartmentDto: UpdateDepartmentDto) {
+    return await this.departmentModel.findOneAndReplace(
+      { _id: id },
+      updateDepartmentDto,
+      { new: true },
+    );
   }
 
-  async remove(id:string){
+  async remove(id: string) {
     return this.departmentModel.findByIdAndRemove(id);
   }
 
-  async findOne(id:string){
+  async findOne(id: string) {
     return this.departmentModel.findById(id);
   }
-
 }
